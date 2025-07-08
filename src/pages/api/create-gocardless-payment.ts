@@ -1,7 +1,7 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import GoCardless from 'gocardless-nodejs';
-import { Environment } from 'gocardless-nodejs/dist/GoCardless';
+import { Environment } from 'gocardless-nodejs';
 
 const goCardless = new GoCardless({
   accessToken: process.env.GOCARDLESS_ACCESS_TOKEN || '',
