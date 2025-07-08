@@ -11,8 +11,36 @@ export const metadata: Metadata = {
   description: 'The official homepage of EPN Global, connecting executives worldwide.',
 };
 
+interface HomepageAttributes {
+  heroTitle: string;
+  heroVideo?: {
+    data?: {
+      attributes?: {
+        url: string;
+      };
+    };
+  };
+  features: Array<{
+    title: string;
+    description: string;
+  }>;
+  testimonials: Array<{
+    name: string;
+    title: string;
+    testimonial: string;
+  }>;
+}
+
+interface HomepageResponse {
+  homepage: {
+    data: {
+      attributes: HomepageAttributes;
+    };
+  };
+}
+
 async function getHomepageData() {
-  const data = await graphqlClient.request(GET_HOMEPAGE_DATA);
+  const data = await graphqlClient.request<HomepageResponse>(GET_HOMEPAGE_DATA);
   return data.homepage.data.attributes;
 }
 
