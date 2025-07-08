@@ -1,5 +1,5 @@
 
-import NextAuth, { User } from 'next-auth';
+import NextAuth, { User, Session } from 'next-auth';
 import LinkedInProvider from 'next-auth/providers/linkedin';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { JWT } from 'next-auth/jwt';
