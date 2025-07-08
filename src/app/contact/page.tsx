@@ -1,9 +1,7 @@
 
 import React from 'react';
-import { Typography, Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import type { Metadata } from 'next';
-import HubSpotForm from '../../components/HubSpotForm';
-import CalendlyEmbed from '../../components/CalendlyEmbed';
 
 export const metadata: Metadata = {
   title: 'EPN Global - Contact Us',
@@ -19,16 +17,14 @@ const ContactPage = () => {
       <Typography variant="body1" sx={{ mb: 4 }}>
         Get in touch with the EPN Global team.
       </Typography>
-
       <Typography variant="h4" component="h2" gutterBottom>
         Send us a message
       </Typography>
-      <HubSpotForm portalId="YOUR_HUBSPOT_PORTAL_ID" formId="YOUR_HUBSPOT_FORM_ID" />
-
+      <Typography variant="body1">Contact form is currently unavailable.</Typography>
       <Typography variant="h4" component="h2" gutterBottom sx={{ mt: 4 }}>
         Schedule a meeting
       </Typography>
-      <CalendlyEmbed url="YOUR_CALENDLY_EMBED_URL" />
+      <Typography variant="body1">Meeting scheduling is currently unavailable.</Typography>
     </Container>
   );
 };

@@ -1,17 +1,12 @@
 
 import React from 'react';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import { Typography, Container, Box } from '@mui/material';
-import CheckoutForm from '../../components/CheckoutForm';
+import { Container, Typography, Box } from '@mui/material';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'EPN Global - Checkout',
   description: 'Securely complete your purchase with Stripe Checkout.',
 };
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '');
 
 const CheckoutPage = () => {
   return (
@@ -20,11 +15,7 @@ const CheckoutPage = () => {
         Checkout
       </Typography>
       <Box sx={{ maxWidth: 600, mx: 'auto', mt: 4 }}>
-        {stripePromise && (
-          <Elements stripe={stripePromise}>
-            <CheckoutForm />
-          </Elements>
-        )}
+        <Typography variant="body1">Checkout functionality is currently unavailable.</Typography>
       </Box>
     </Container>
   );

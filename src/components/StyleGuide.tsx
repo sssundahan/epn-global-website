@@ -1,6 +1,8 @@
 
+'use client';
+
 import React from 'react';
-import { Button, Card, TextField, Typography, Box, useTheme } from '@mui/material';
+import { Button, Card, CardContent, TextField, Typography, Box, useTheme } from '@mui/material';
 
 const StyleGuide = () => {
   const theme = useTheme();

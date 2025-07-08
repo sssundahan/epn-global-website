@@ -3,7 +3,6 @@ import React from 'react';
 import Hero from '../components/Hero';
 import FeatureGrid from '../components/FeatureGrid';
 import TestimonialCarousel from '../components/TestimonialCarousel';
-import graphqlClient, { GET_HOMEPAGE_DATA } from '../lib/graphql';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -39,18 +38,24 @@ interface HomepageResponse {
   };
 }
 
-async function getHomepageData() {
-  const data = await graphqlClient.request<HomepageResponse>(GET_HOMEPAGE_DATA);
-  return data.homepage.data.attributes;
-}
+const homepageData = {
+  heroTitle: 'Welcome to EPN Global',
+  heroVideo: undefined,
+  features: [
+    { title: 'Networking', description: 'Connect with top executives.' },
+    { title: 'Events', description: 'Exclusive access to global events.' },
+    { title: 'Resources', description: 'Premium content and insights.' },
+  ],
+  testimonials: [
+    { name: 'Jane Doe', title: 'CEO', testimonial: 'EPN Global transformed my career.' },
+  ],
+};
 
-const HomePage = async () => {
-  const homepageData = await getHomepageData();
-
+const HomePage = () => {
   return (
     <div>
       <Hero
-        heroVideo={homepageData.heroVideo?.data?.attributes?.url}
+        heroVideo={homepageData.heroVideo}
         heroTitle={homepageData.heroTitle}
       />
       <FeatureGrid features={homepageData.features} />

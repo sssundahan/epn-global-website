@@ -1,8 +1,10 @@
-
+'use client';
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const Footer = () => {
+  const theme = useTheme();
   return (
     <Box
       component="footer"
@@ -10,7 +12,7 @@ const Footer = () => {
         py: 3,
         px: 2,
         mt: 'auto',
-        backgroundColor: (theme) =>
+        backgroundColor:
           theme.palette.mode === 'light'
             ? theme.palette.grey[200]
             : theme.palette.grey[800],

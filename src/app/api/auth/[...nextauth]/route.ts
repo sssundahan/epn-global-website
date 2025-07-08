@@ -1,15 +1,10 @@
 
 import NextAuth, { User, Session } from 'next-auth';
-import LinkedInProvider from 'next-auth/providers/linkedin';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { JWT } from 'next-auth/jwt';
 
 const authOptions = {
   providers: [
-    LinkedInProvider({
-      clientId: process.env.LINKEDIN_CLIENT_ID as string,
-      clientSecret: process.env.LINKEDIN_CLIENT_SECRET as string,
-    }),
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
