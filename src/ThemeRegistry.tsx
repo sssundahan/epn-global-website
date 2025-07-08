@@ -30,7 +30,7 @@ export default function ThemeRegistry(props: { options: any; children: any; }) {
       const prevInserted = inserted;
       inserted = [];
       return prevInserted;
-_   };
+    };
     return { cache, flush };
   });
 
