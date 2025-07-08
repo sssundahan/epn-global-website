@@ -21,7 +21,7 @@ const StyleGuide = () => {
 
       <Typography variant="h4" gutterBottom>Cards</Typography>
       <Card sx={{ maxWidth: 300, mb: 4 }}>
-        <Card content>
+        <CardContent>
           <Typography variant="h5" component="div">
             Card Title
           </Typography>
@@ -31,7 +31,7 @@ const StyleGuide = () => {
           <Typography variant="body2">
             This is a sample card content.
           </Typography>
-        </Card>
+        </CardContent>
       </Card>
 
       <Typography variant="h4" gutterBottom>Form Fields</Typography>

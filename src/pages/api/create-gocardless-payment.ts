@@ -1,11 +1,11 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
-import GoCardless from 'gocardless-nodejs';
-import { Environment } from 'gocardless-nodejs';
+import gocardless from 'gocardless-nodejs';
+import { Environments } from 'gocardless-nodejs/constants';
 
-const goCardless = new GoCardless({
+const goCardless = gocardless({
   accessToken: process.env.GOCARDLESS_ACCESS_TOKEN || '',
-  environment: process.env.NODE_ENV === 'production' ? Environment.LIVE : Environment.SANDBOX,
+  environment: process.env.NODE_ENV === 'production' ? Environments.Live : Environments.Sandbox,
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
