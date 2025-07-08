@@ -42,4 +42,4 @@ export const authOptions = {
   },
 };
 
-export default NextAuth(authOptions);
+export const { GET, POST } = NextAuth(authOptions);
