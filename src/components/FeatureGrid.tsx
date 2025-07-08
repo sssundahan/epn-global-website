@@ -15,7 +15,7 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({ features }) => {
   return (
     <Grid container spacing={4} sx={{ p: 4 }}>
       {features.map((feature) => (
-        <Grid item xs={12} md={4} key={feature.title} component="div">
+        <Grid item xs={12} md={4} key={feature.title}>
           <Card>
             <CardContent>
               <Typography variant="h5" component="div">
