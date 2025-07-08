@@ -1,7 +1,8 @@
 
-import NextAuth from 'next-auth';
+import NextAuth, { User } from 'next-auth';
 import LinkedInProvider from 'next-auth/providers/linkedin';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { JWT } from 'next-auth/jwt';
 
 const authOptions = {
   providers: [
@@ -29,7 +30,7 @@ const authOptions = {
     signIn: '/auth/signin',
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: { token: JWT; user: User }) {
       if (user) {
         token.id = user.id;
       }
